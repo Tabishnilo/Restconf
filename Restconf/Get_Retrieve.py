@@ -24,10 +24,5 @@ requests.packages.urllib3.disable_warnings()
 response = requests.get(url,headers=headers,auth=(device['username'],device['password']), verify=False).json()
 
 
-interfaces = response['ietf-interfaces:interfaces']['interface']
+interfaces = response['ietf-interfaces:interfaces']
 print (interfaces)
-
-
-for interface in interfaces:
-    if bool(interface[ 'ietf-ip:ipv4']): 
-        print(interface) 
